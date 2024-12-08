@@ -12,14 +12,16 @@ def navbar() -> rx.Component:
         rx.desktop_only(
             rx.hstack(
                 rx.hstack(
-                    rx.image(
-                        src="/favicon.ico",
+                    rx.avatar(
+                        fallback="K",
                         width="2.25em",
-                        height="auto",
+                        height="2.25em",
                         border_radius="25%",
+                        color_scheme="amber",
+                        variant="solid",                        
                     ),
                     rx.heading(
-                        "Bienvenido", size="7", weight="bold"
+                        "Bienvenido Admin", size="7", weight="bold"
                     ),
                     align_items="center",
                 ),
@@ -45,7 +47,7 @@ def navbar() -> rx.Component:
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "Reflex", size="6", weight="bold"
+                        "Bienvenido", size="6", weight="bold"
                     ),
                     align_items="center",
                 ),
@@ -66,9 +68,8 @@ def navbar() -> rx.Component:
             ),
         ),
         bg=rx.color("accent", 3),
-        padding="1em",
-        # position="fixed",
-        # top="0px",
-        # z_index="5",
+        padding_x="2em",
+        padding_y="1em",
         width="100%",
+        height="4em",
     )

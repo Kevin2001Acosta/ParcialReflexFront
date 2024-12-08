@@ -46,39 +46,20 @@ def sidebar() -> rx.Component:
     return rx.box(
         rx.desktop_only(
             rx.vstack(
-                rx.hstack(
-                    rx.avatar(
-                        fallback="K",
-                        width="2.25em",
-                        height="2.25em",
-                        border_radius="25%",
-                        color_scheme="amber",
-                        variant="solid",                        
-                    ),
-                    rx.heading(
-                        "Admin", size="7", weight="bold"
-                    ),
-                    align="center",
-                    justify="start",
-                    padding_x="0.5em",
-                    width="100%",
-                ),
-                rx.box(height="5px"),
+                rx.box(height="20px"),
                 sidebar_items(),
                 spacing="5",
-                position="fixed",
-                # left="0px",
-                top="0px",
-                # z_index="5",
+                #position="relative",
+                #z_index="20",
                 padding_x="1em",
                 padding_y="1.5em",
-                #padding_x="0",
-                #padding_y="0",
+                #padding="0",
                 bg=rx.color("accent", 3),
                 align="start",
                 height="100vh", # el sidebar se extienda verticalmente
-                #height="650px",
                 width="16em",
+                margin="0",
+                displey="flex",
             ),
         ),
         rx.mobile_and_tablet(

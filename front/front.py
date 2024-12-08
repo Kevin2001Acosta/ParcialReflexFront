@@ -9,11 +9,16 @@ app = rx.App()
 
 def main_content() -> rx.Component:
     return rx.box(
-        rx.text("holaaaaaaaaaaaaaaaa", size="10", color=rx.color("accent", 11)),
-        align="center",
-        justify="center",
-        height="100%",
+        rx.text("eeeeeeeeeeeee", size="10", color=rx.color("accent", 11)),
+        display="flex",
+        alignItems="center",
+        justifyContent="center",
+        height="100vh",
         width="100%",
+        bg=rx.color("green",8,True),  
+        #margin_left="16em",
+        #margin_top="4em",
+        #position="relative",
         )
 
 
@@ -23,20 +28,15 @@ def index() -> rx.Component:
             navbar(),
             rx.hstack(
                 sidebar(),
-                rx.box(
-                    main_content(),
-                    justify="center",
-                    align="center",
-                    padding="1rem",
-                    height="100vh",
-                    width="100%",
-                    ),
-                height="100vh",
+                main_content(),
+                height="100%",
                 width="100%",
+                spacing="0",
             ),
             width="100%",
+            spacing="0",
         ),
-        height="100vh",  
+        height="100%",  
         bg=rx.color("gray",8,True),  
     )
 
