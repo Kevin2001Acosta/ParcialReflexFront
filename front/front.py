@@ -6,6 +6,7 @@ from front.components.components_example import component_b, component_c
 from front.components.form_user import formUser
 from tortoise.contrib.fastapi import register_tortoise
 from backend.routes import user_routes
+from front.components.table_users import tableUser
 
 
 
@@ -25,30 +26,18 @@ def main_content() -> rx.Component:
         ),
         rx.cond(
             StateUser.get_component == "Load users",
-            component_b(),
+            tableUser(),
             rx.cond(
                 StateUser.get_component == "Update user",
-                component_c(),
-                rx.cond(
-                    StateUser.get_component == "delete user",
-                    rx.box(
-                        rx.text("delete User", size="10", color=rx.color("accent", 11)),
-                        display="flex",
-                        alignItems="center",
-                        justifyContent="center",
-                        height="100vh",
-                        width="100%",
-                        bg=rx.color("green", 8, True),
-                    ),
-                    rx.box(
-                        rx.text("Bienvenido", size="10", color=rx.color("accent", 11)),
+                component_b(),
+                rx.box(
+                        rx.text("Bienvenido", size="50", color=rx.color("accent", 11)),
                         display="flex",
                         alignItems="center",
                         justifyContent="center",
                         height="100vh",
                         width="100%", 
                     )
-                )
             )
         )
     )

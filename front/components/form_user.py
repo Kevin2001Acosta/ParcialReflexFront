@@ -33,7 +33,7 @@ def formUser() -> rx.Component:
         rx.flex(
             rx.hstack(
                 rx.badge(
-                    rx.icon(tag="mail-plus", size=32),
+                    rx.icon(tag="user-plus", size=32),
                     color_scheme="blue",
                     radius="full",
                     padding="0.65rem",

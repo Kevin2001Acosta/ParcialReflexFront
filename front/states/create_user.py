@@ -1,5 +1,12 @@
 import reflex as rx
 import requests as rq
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+BACKEND_URL = os.getenv("BACKEND_URL")
+
 class BackendState(rx.State):
     submission_status: str = ""
     loader: bool = False
@@ -20,7 +27,7 @@ class BackendState(rx.State):
             self.loader = True
             self.error = False
             print(data)
-            response = rq.post("http://127.0.0.1:8000/users",json=data, headers={"Content-Type": "application/json"})
+            response = rq.post(f"{BACKEND_URL}/users",json=data, headers={"Content-Type": "application/json"})
             print(1)
             if response.status_code == 200:
                 self.submission_status = "user created success"

@@ -36,7 +36,6 @@ def sidebar_items() -> rx.Component:
         sidebar_item("Create user", "layout-dashboard"),
         sidebar_item("Load users", "square-library"),
         sidebar_item("Update user", "bar-chart-4"),
-        sidebar_item("delete user", "trash-2"),
         spacing="5",
         width="100%",
     )

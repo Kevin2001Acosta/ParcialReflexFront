@@ -3,3 +3,4 @@ reflex-chakra
 tortoise-orm
 alembic
 asyncpg
+python-dotenv
